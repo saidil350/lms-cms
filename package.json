@@ -6,9 +6,9 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
-    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "dev": "cross-env PORT=3001 NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env PORT=3001 NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env PORT=3001 NODE_OPTIONS=--no-deprecation next start",
     "lint": "next lint",
     "generate:types": "payload generate:types",
     "migrate": "payload migrate",
