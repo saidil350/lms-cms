@@ -11,7 +11,7 @@ import {
   LinkFeature,
   UploadFeature,
 } from '@payloadcms/richtext-lexical'
-import { isAdminOrEditor } from '../access/isAdminOrEditor'
+import { isAdminOrEditor } from '../access/isAdminOrEditor.ts'
 
 // Hook otomatis generate slug dari title
 const generateSlug: FieldHook = ({ value, siblingData }) => {

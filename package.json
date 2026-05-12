@@ -11,9 +11,9 @@
     "start": "cross-env PORT=3001 NODE_OPTIONS=--no-deprecation next start",
     "lint": "next lint",
     "generate:types": "payload generate:types",
-    "migrate": "payload migrate",
-    "migrate:create": "payload migrate:create",
-    "seed": "tsx src/seed.ts"
+    "migrate": "node --experimental-strip-types node_modules/payload/bin.js --disable-transpile migrate",
+    "migrate:create": "node --experimental-strip-types node_modules/payload/bin.js --disable-transpile migrate:create",
+    "seed": "node --experimental-strip-types --experimental-specifier-resolution=node src/seed.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "latest",

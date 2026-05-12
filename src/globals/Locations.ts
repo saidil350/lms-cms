@@ -1,5 +1,5 @@
 import type { GlobalConfig } from 'payload'
-import { isAdminOrEditor } from '../access/isAdminOrEditor'
+import { isAdminOrEditor } from '../access/isAdminOrEditor.ts'
 
 export const Locations: GlobalConfig = {
   slug: 'locations',

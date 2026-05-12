@@ -1,0 +1,1 @@
+{"version":3,"file":"revalidateFrontend.d.ts","sourceRoot":"","sources":["../../../src/hooks/revalidateFrontend.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAGV,gBAAgB,EAEhB,YAAY,EACb,MAAM,SAAS,CAAA;AAsFhB,wBAAgB,0BAA0B,CAAC,WAAW,EAAE,gBAAgB,EAAE,GAAG,gBAAgB,EAAE,CAuB9F;AAED,wBAAgB,sBAAsB,CAAC,OAAO,EAAE,YAAY,EAAE,GAAG,YAAY,EAAE,CAgB9E"}

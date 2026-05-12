@@ -3,32 +3,30 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
-import { fileURLToPath } from 'url'
 
 // Collections
-import { Users } from './collections/Users'
-import { Media } from './collections/Media'
-import { Posts } from './collections/Posts'
-import { Projects } from './collections/Projects'
-import { Testimonials } from './collections/Testimonials'
-import { Team } from './collections/Team'
-import { Certifications } from './collections/Certifications'
-import { Industries } from './collections/Industries'
-import { Innovations } from './collections/Innovations'
+import { Users } from './collections/Users.ts'
+import { Media } from './collections/Media.ts'
+import { Posts } from './collections/Posts.ts'
+import { Projects } from './collections/Projects.ts'
+import { Testimonials } from './collections/Testimonials.ts'
+import { Team } from './collections/Team.ts'
+import { Certifications } from './collections/Certifications.ts'
+import { Industries } from './collections/Industries.ts'
+import { Innovations } from './collections/Innovations.ts'
 
 // Globals
-import { CompanyProfile } from './globals/CompanyProfile'
-import { BrandPromise } from './globals/BrandPromise'
-import { Contact } from './globals/Contact'
-import { Locations } from './globals/Locations'
-import { Stats } from './globals/Stats'
-import { ProductionProcess } from './globals/ProductionProcess'
-import { HomepageHero } from './globals/HomepageHero'
-import { SiteChrome } from './globals/SiteChrome'
-import { withFrontendCollectionSync, withFrontendGlobalSync } from './hooks/revalidateFrontend'
+import { CompanyProfile } from './globals/CompanyProfile.ts'
+import { BrandPromise } from './globals/BrandPromise.ts'
+import { Contact } from './globals/Contact.ts'
+import { Locations } from './globals/Locations.ts'
+import { Stats } from './globals/Stats.ts'
+import { ProductionProcess } from './globals/ProductionProcess.ts'
+import { HomepageHero } from './globals/HomepageHero.ts'
+import { SiteChrome } from './globals/SiteChrome.ts'
+import { withFrontendCollectionSync, withFrontendGlobalSync } from './hooks/revalidateFrontend.ts'
 
-const filename = fileURLToPath(import.meta.url)
-const dirname = path.dirname(filename)
+const dirname = path.resolve(process.cwd(), 'src')
 
 // Parse CORS origins dari environment variable
 const corsOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000')
@@ -107,28 +105,30 @@ export default buildConfig({
   },
 
   // ─── Plugins ─────────────────────────────────────────────────────────────────
-  plugins: [
-    s3Storage({
-      collections: {
-        media: {
-          prefix: 'lms-media',
-          disablePayloadAccessControl: true,
-          generateFileURL: ({ filename: fname, prefix }) =>
-            `${process.env.S3_PUBLIC_URL}/${prefix}/${fname}`,
-        },
-      },
-      bucket: process.env.S3_BUCKET || '',
-      config: {
-        endpoint: process.env.S3_ENDPOINT,
-        region: process.env.S3_REGION || 'auto',
-        credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY || '',
-          secretAccessKey: process.env.S3_SECRET_KEY || '',
-        },
-        forcePathStyle: true,
-      },
-    }),
-  ],
+  plugins: process.env.S3_BUCKET
+    ? [
+        s3Storage({
+          collections: {
+            media: {
+              prefix: 'lms-media',
+              disablePayloadAccessControl: true,
+              generateFileURL: ({ filename: fname, prefix }) =>
+                `${process.env.S3_PUBLIC_URL}/${prefix || 'lms-media'}/${fname}`,
+            },
+          },
+          bucket: process.env.S3_BUCKET,
+          config: {
+            endpoint: process.env.S3_ENDPOINT,
+            region: process.env.S3_REGION || 'auto',
+            credentials: {
+              accessKeyId: process.env.S3_ACCESS_KEY || '',
+              secretAccessKey: process.env.S3_SECRET_KEY || '',
+            },
+            forcePathStyle: true,
+          },
+        }),
+      ]
+    : [],
 
   // ─── Server URL ──────────────────────────────────────────────────────────────
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',

@@ -1,0 +1,1 @@
+{"version":3,"file":"isAdminOrEditor.js","sourceRoot":"","sources":["../../../src/access/isAdminOrEditor.ts"],"names":[],"mappings":";;;AAEO,MAAM,eAAe,GAAW,CAAC,EAAE,GAAG,EAAE,EAAE,IAAI,EAAE,EAAE,EAAE,EAAE;IAC3D,OAAO,OAAO,CAAC,IAAI,EAAE,IAAI,KAAK,OAAO,IAAI,IAAI,EAAE,IAAI,KAAK,QAAQ,CAAC,CAAA;AACnE,CAAC,CAAA;AAFY,QAAA,eAAe,mBAE3B"}

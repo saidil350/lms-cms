@@ -1,5 +1,5 @@
 import type { CollectionConfig, FieldHook } from 'payload'
-import { isAdminOrEditor } from '../access/isAdminOrEditor'
+import { isAdminOrEditor } from '../access/isAdminOrEditor.ts'
 
 const generateSlug: FieldHook = ({ value, siblingData }) => {
   if (value) return value

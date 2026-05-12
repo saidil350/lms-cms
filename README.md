@@ -182,7 +182,7 @@ pnpm start            # Start production server
 pnpm generate:types   # Generate TypeScript types
 pnpm migrate          # Jalankan migrasi database
 pnpm migrate:create   # Buat file migrasi baru
-pnpm seed             # Seed data dari file statis (jalankan sekali)
+pnpm seed             # Seed dummy content ke Payload CMS (globals, collections, dan media lokal)
 ```
 
 ---

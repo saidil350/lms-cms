@@ -5,7 +5,7 @@ import {
   UnorderedListFeature,
   OrderedListFeature,
 } from '@payloadcms/richtext-lexical'
-import { isAdminOrEditor } from '../access/isAdminOrEditor'
+import { isAdminOrEditor } from '../access/isAdminOrEditor.ts'
 
 export const CompanyProfile: GlobalConfig = {
   slug: 'company-profile',
