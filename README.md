@@ -9,7 +9,7 @@ Backend headless CMS berbasis **Payload CMS v3** + **PostgreSQL** untuk website 
 - **Payload CMS v3** — standalone mode (tanpa Express custom)
 - **TypeScript** — strict mode
 - **PostgreSQL** — via `@payloadcms/db-postgres`
-- **Cloudflare R2** — media storage via `@payloadcms/storage-s3`
+- **Cloudflare R2** — optional media storage via `@payloadcms/storage-s3`
 - **Docker** — untuk deployment via Dokploy
 
 ---
@@ -149,7 +149,8 @@ GET  /api/globals/production-process         ← tahapan proses produksi
    - `FRONTEND_URL` - domain frontend (mis. `https://namaproject.id`)
    - `FRONTEND_REVALIDATE_URL` - endpoint revalidate frontend (mis. `https://namaproject.id/api/revalidate`)
    - `REVALIDATE_SECRET` - secret yang sama dengan repo `lms-landing-page`
-   - `S3_*` — konfigurasi Cloudflare R2
+   - `USE_S3_STORAGE` — set `true` hanya kalau ingin pakai bucket R2/S3
+   - `S3_*` — konfigurasi Cloudflare R2, dipakai hanya jika `USE_S3_STORAGE=true`
 5. Set domain: `cms.namaproject.id` → Dokploy otomatis setup SSL
 6. Deploy → tunggu build selesai
 7. Buka `cms.namaproject.id/admin` → buat admin user pertama
@@ -163,6 +164,7 @@ GET  /api/globals/production-process         ← tahapan proses produksi
 3. Aktifkan **Custom Domain** pada bucket (mis. `media.namaproject.id`)
 4. Isi environment variables:
    ```env
+   USE_S3_STORAGE=true
    S3_BUCKET=nama-bucket
    S3_ENDPOINT=https://ACCOUNT_ID.r2.cloudflarestorage.com
    S3_REGION=auto

@@ -89,6 +89,9 @@ export const HomepageHero: GlobalConfig = {
       type: 'array',
       label: 'Gambar Kolase Pendukung',
       maxRows: 6,
+      admin: {
+        description: 'Gambar-gambar ini mengisi kolase pada hero halaman awal di landing page.',
+      },
       fields: [
         {
           name: 'image',

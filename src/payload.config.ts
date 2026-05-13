@@ -36,6 +36,7 @@ const corsOrigins = (process.env.CORS_ORIGINS || 'http://localhost:3000')
 
 const databaseUri =
   process.env.DATABASE_URI || 'postgresql://lms:lmspass@localhost:5432/lms_cms'
+const useS3Storage = process.env.USE_S3_STORAGE === 'true' && Boolean(process.env.S3_BUCKET)
 
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'local_dev_secret_change_in_production',
@@ -105,7 +106,7 @@ export default buildConfig({
   },
 
   // ─── Plugins ─────────────────────────────────────────────────────────────────
-  plugins: process.env.S3_BUCKET
+  plugins: useS3Storage
     ? [
         s3Storage({
           collections: {
