@@ -11,20 +11,21 @@ type SyncTarget = {
   includeSlugPath?: (doc: Record<string, unknown>) => string | null
 }
 
-const PUBLIC_ROUTES = ['/', '/tentang-kami', '/layanan', '/proyek', '/berita', '/kontak']
+const PUBLIC_ROUTES = ['/', '/tentang-kami', '/layanan', '/proyek', '/berita', '/kontak', '/pengetahuan-produk', '/program-mitra']
 
 const COLLECTION_SYNC_TARGETS: Record<string, SyncTarget> = {
   posts: {
     paths: ['/', '/berita'],
     includeSlugPath: (doc) => (typeof doc.slug === 'string' ? `/berita/${doc.slug}` : null),
   },
-  projects: { paths: ['/', '/proyek'] },
+  projects: { paths: ['/', '/proyek', '/program-mitra'] },
   testimonials: { paths: ['/'] },
   team: { paths: ['/', '/tentang-kami'] },
   certifications: { paths: ['/', '/tentang-kami'] },
-  industries: { paths: ['/', '/layanan'] },
-  innovations: { paths: ['/'] },
+  industries: { paths: ['/', '/layanan', '/pengetahuan-produk'] },
+  innovations: { paths: ['/', '/program-mitra'] },
   media: { paths: PUBLIC_ROUTES },
+  leads: { paths: ['/kontak', '/program-mitra'] },
 }
 
 const GLOBAL_SYNC_TARGETS: Record<string, SyncTarget> = {
@@ -35,6 +36,8 @@ const GLOBAL_SYNC_TARGETS: Record<string, SyncTarget> = {
   locations: { paths: ['/', '/tentang-kami'] },
   stats: { paths: ['/', '/tentang-kami'] },
   'production-process': { paths: ['/', '/tentang-kami'] },
+  'product-knowledge': { paths: ['/pengetahuan-produk'] },
+  'program-mitra': { paths: ['/program-mitra'] },
   'site-chrome': { paths: PUBLIC_ROUTES },
 }
 

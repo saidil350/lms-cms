@@ -623,54 +623,54 @@ async function seedGlobals() {
   console.log("Seeding globals...");
 
   await upsertGlobal("company-profile", {
-    siteName: "MRS - Multi National Plastic Packaging",
-    tagline: "Mitra kemasan plastik yang value-first, responsif, dan konsisten",
+    siteName: "Makmur Raya Sejahtera",
+    tagline: "Halal-Green, Quality & Total Support",
     description:
-      "MRS membantu brand dan distributor menjaga kualitas kemasan, stabilitas pasokan, dan ketenangan operasional di seluruh Indonesia.",
-    vision: "Kemitraan kemasan yang kuat, rapi, dan bertumbuh bersama.",
+      "MRS hadir sebagai mitra strategis pertumbuhan bagi distributor kemasan plastik di Indonesia dengan standar Halgreen, total support, dan kemitraan MOP.",
+    vision: "Kemitraan yang membawa kemakmuran, keberkahan, dan pertumbuhan berkelanjutan.",
     mission: emptyRichText(companyMissionParagraphs),
     foundedYear: 2001,
     logo: mediaFallback("siteLogoDark")?.id,
     logoDark: mediaFallback("siteLogoDark")?.id,
     defaultOgImage: mediaFallback("companyProfileMedia")?.id,
     overviewHighlights: [
-      { text: "Kemitraan yang transparan dan responsif" },
-      { text: "Proses produksi yang rapi dan konsisten" },
-      { text: "Dukungan nasional untuk pertumbuhan jangka panjang" },
+      { text: "Standar Halgreen yang konsisten dan terukur" },
+      { text: "Total Support untuk respons operasional yang cepat" },
+      { text: "Program MOP untuk kemitraan jangka panjang" },
     ],
     footerDescription:
-      "MRS membantu mitra menjaga kualitas kemasan, kelancaran distribusi, dan konsistensi layanan dengan pendekatan yang value-first.",
+      "MRS membantu mitra menjaga kualitas, kelancaran distribusi, dan hubungan bisnis yang selaras dengan prinsip Islam.",
     socialLinks: [
       { platform: "linkedin", url: "/kontak" },
       { platform: "instagram", url: "/kontak" },
     ],
     overviewEyebrow: "Company Profile",
-    overviewHeadline: "Membangun kemitraan yang rapi dari produksi sampai distribusi",
+    overviewHeadline: "Membangun kemitraan yang rapi dari standar produksi sampai dukungan distribusi",
     overviewDescription:
       "Kami memadukan fasilitas, proses, dan layanan yang dirancang agar kebutuhan mitra tetap berjalan stabil.",
-    overviewBadgeLabel: "Aktif melayani kebutuhan nasional",
+    overviewBadgeLabel: "Mitra strategis distributor nasional",
     overviewMediaLabel: "Profil perusahaan",
     overviewVideoMode: "video",
     overviewVideoUrl: "/videos/plastic.mp4",
     overviewVideoPoster: mediaFallback("companyProfileMedia")?.id,
     peopleEyebrow: "Tim",
-    peopleHeadline: "Orang-orang di balik eksekusi harian",
+    peopleHeadline: "Orang-orang di balik eksekusi yang menjaga komitmen kemitraan",
     peopleDescription:
       "Tim kami fokus menjaga komunikasi, produksi, dan delivery agar pengalaman mitra tetap nyaman dari awal sampai akhir.",
     peopleCtaLabel: "Kenal tim kami",
     testimonialEyebrow: "Testimoni",
-    testimonialHeadline: "Apa kata mitra tentang kerja sama dengan MRS",
+    testimonialHeadline: "Apa kata mitra tentang kerja sama yang membawa rasa aman",
     testimonialDescription:
       "Cuplikan komentar yang menggambarkan bagaimana tim, proses, dan kualitas kami dirasakan di lapangan.",
     certificationEyebrow: "Sertifikasi",
-    certificationHeadline: "Penguatan mutu dan kepatuhan yang bisa diverifikasi",
+    certificationHeadline: "Penguatan mutu, kepatuhan, dan konsistensi yang bisa diverifikasi",
     certificationDescription:
       "Kami menjaga standar operasional lewat sertifikasi dan praktik kerja yang mendukung kualitas konsisten.",
     certificationBadgeTitle: "Dokumen pendukung siap dibagikan",
     certificationBadgeDescription: "Sertifikasi dan bukti kepatuhan dapat ditinjau saat dibutuhkan.",
     certificationDownloadLabel: "Unduh sertifikat",
     locationEyebrow: "Lokasi",
-    locationHeadline: "Jejak operasional yang siap melayani kebutuhan nasional",
+    locationHeadline: "Jejak operasional yang siap melayani kebutuhan distributor nasional",
     locationHighlight: "nasional",
     locationDescription:
       "Kami menempatkan titik layanan dan koordinasi di lokasi yang memudahkan distribusi, komunikasi, dan respons yang cepat.",
@@ -678,22 +678,22 @@ async function seedGlobals() {
     locationMapLabel: "Peta lokasi",
     locationMapHint: "Lihat titik kantor dan fasilitas kami pada peta interaktif.",
     productEyebrow: "Produk",
-    productHeadline: "Pilihan produk untuk kebutuhan distribusi dan retail",
+    productHeadline: "Pilihan produk dan pengetahuan yang relevan untuk distributor aktif",
     productDescription:
-      "Dari kebutuhan standard hingga custom, kami menyesuaikan bentuk dan spesifikasi produk dengan target penggunaan.",
+      "Dari kebutuhan standar sampai custom, kami menyesuaikan bentuk, spesifikasi, dan ritme suplai dengan target penggunaan.",
     productPrompt: "Jelajahi pilihan produk yang paling sesuai dengan kebutuhan Anda.",
     productCtaLabel: "Lihat produk",
     solutionEyebrow: "Business Solutions",
     solutionHeadline: "Pendekatan solusi yang relevan untuk tiap kebutuhan",
     solutionHighlight: "dan terukur",
     solutionDescription:
-      "Setiap industri punya ritme, target, dan tantangan yang berbeda. Kami menyesuaikan material, bentuk, dan alur kerja agar kemasan benar-benar membantu bisnis berjalan lebih lancar.",
+      "Setiap distributor punya ritme, target, dan tantangan yang berbeda. Kami menyesuaikan material, bentuk, dan alur kerja agar kemasan benar-benar membantu bisnis berjalan lebih lancar.",
     solutionPrompt: "Diskusikan kebutuhan kemasan Anda bersama tim kami.",
     solutionCtaLabel: "Hubungi kami",
     expertiseEyebrow: "Our Expertise",
     expertiseHeadline: "Solusi kemasan untuk kebutuhan industri yang terus bergerak",
     expertiseDescription:
-      "Kami merancang kemasan yang tidak hanya fungsional, tetapi juga membantu alur distribusi, kualitas, dan pengalaman brand.",
+      "Kami merancang kemasan yang tidak hanya fungsional, tetapi juga membantu alur distribusi, kualitas, dan pengalaman mitra.",
     expertiseCtaLabel: "Lihat keahlian",
     expertiseSwipeHint: "Geser untuk melihat area fokus",
     innovationEyebrow: "Inovasi",
@@ -701,19 +701,19 @@ async function seedGlobals() {
     innovationHighlight: "yang stabil",
     innovationDescription:
       "Kami terus menyempurnakan proses produksi, inspeksi, dan efisiensi operasional agar hasil yang diterima mitra tetap konsisten.",
-    projectEyebrow: "Proyek Pilihan",
-    projectHeadline: "Contoh hasil kerja yang mewakili variasi kebutuhan industri",
-    projectHighlight: "hasil kerja",
+    projectEyebrow: "Program Mitra",
+    projectHeadline: "Ekosistem kemitraan yang mendorong distributor naik kelas",
+    projectHighlight: "naik kelas",
     projectDescription:
-      "Ragam proyek berikut memberi gambaran bagaimana solusi kemasan kami diterapkan pada kebutuhan yang berbeda-beda.",
-    projectCtaLabel: "Lihat semua proyek",
-    newsEyebrow: "Berita Terbaru",
+      "Ragam program berikut memberi gambaran bagaimana MRS mendampingi distributor melalui Halgreen, MOP, dan total support.",
+    projectCtaLabel: "Lihat program mitra",
+    newsEyebrow: "Pengetahuan Produk",
     newsHeadline: "Insight, pembaruan, dan cerita produksi",
-    newsHighlight: "pembaruan",
+    newsHighlight: "pengetahuan",
     newsDescription:
-      "Konten singkat seputar inovasi, operasional, dan wawasan industri yang bisa membantu pengambilan keputusan.",
-    newsCtaLabel: "Baca berita",
-    newsAllLabel: "Semua berita",
+      "Konten singkat seputar produk, operasional, dan wawasan industri yang membantu pengambilan keputusan.",
+    newsCtaLabel: "Baca artikel",
+    newsAllLabel: "Semua artikel",
     blogSearchPlaceholder: "Cari artikel",
     blogNoResultsLabel: "Tidak ada artikel yang cocok.",
     blogResultsPrefix: "Menampilkan",
@@ -757,6 +757,91 @@ async function seedGlobals() {
     ],
   });
 
+  await upsertGlobal("product-knowledge", {
+    eyebrow: "Pengetahuan Produk",
+    headline: "Panduan singkat agar distributor memahami nilai di balik produk",
+    subheadline:
+      "MRS tidak hanya menjual kemasan, tetapi juga membantu mitra membaca konteks kualitas, operasional, dan peluang pertumbuhan di balik setiap solusi.",
+    introLabel: "Insight yang relevan",
+    topicsTitle: "Topik utama",
+    topicsDescription:
+      "Ringkasan area pengetahuan yang paling sering dibutuhkan saat distributor menilai kualitas, kelancaran stok, dan kesiapan kerja sama.",
+    topics: [
+      {
+        title: "Standar Halgreen",
+        description:
+          "Bagaimana konsistensi produksi, kebersihan proses, dan kontrol kualitas dijaga agar hasil stabil.",
+        icon: "ShieldCheck",
+      },
+      {
+        title: "Program MOP",
+        description:
+          "Kenapa pola kemitraan jangka panjang lebih sehat daripada jual-beli putus untuk distributor aktif.",
+        icon: "Users",
+      },
+      {
+        title: "Total Support",
+        description:
+          "Dukungan responsif untuk kebutuhan operasional, penyesuaian order, dan komunikasi harian.",
+        icon: "Truck",
+      },
+    ],
+    ctaLabel: "Hubungi tim",
+    ctaHref: "/kontak",
+  });
+
+  await upsertGlobal("program-mitra", {
+    eyebrow: "Program Mitra",
+    headline: "Ekosistem kemitraan yang mendorong distributor naik kelas",
+    subheadline:
+      "Program MRS dirancang untuk distributor yang ingin bertumbuh bersama, dengan pola kerja yang transparan, suportif, dan selaras dengan prinsip kemitraan jangka panjang.",
+    introLabel: "Kemitraan strategis",
+    valueTitle: "Kenapa program ini ada",
+    valueDescription:
+      "MRS membangun program mitra sebagai wasilah agar distributor mendapat kepastian kualitas, respons cepat, dan pendampingan yang konsisten di sepanjang perjalanan bisnis.",
+    valuePoints: [
+      {
+        title: "Stabilitas pasokan",
+        description: "Memberi rasa aman agar mitra bisa menjaga order dan reputasi dengan lebih tenang.",
+      },
+      {
+        title: "Kualitas yang konsisten",
+        description: "Mencegah komplain yang tidak perlu melalui kontrol mutu yang ketat dan terukur.",
+      },
+      {
+        title: "Pertumbuhan bersama",
+        description: "Mendorong hubungan jangka panjang yang saling menguntungkan, bukan transaksi sesaat.",
+      },
+    ],
+    processTitle: "Bagaimana program berjalan",
+    processDescription:
+      "Alur kemitraan dibuat sederhana supaya mudah dipahami tim sales, operasional, maupun distributor yang ingin masuk ke program.",
+    steps: [
+      {
+        step: "01",
+        title: "Diskusi kebutuhan",
+        description: "Tim MRS memetakan kebutuhan produk, volume, dan target pasar mitra.",
+      },
+      {
+        step: "02",
+        title: "Penyelarasan solusi",
+        description: "Spesifikasi, ritme suplai, dan struktur kerja disesuaikan dengan konteks bisnis mitra.",
+      },
+      {
+        step: "03",
+        title: "Pendampingan aktif",
+        description: "Mitra mendapat respons cepat, update yang jelas, dan dukungan saat kebutuhan berubah.",
+      },
+      {
+        step: "04",
+        title: "Upgrade bersama",
+        description: "Kemitraan berkembang ke level berikutnya ketika volume, kualitas, dan trust semakin kuat.",
+      },
+    ],
+    ctaLabel: "Ajukan kemitraan",
+    ctaHref: "/kontak",
+  });
+
   await upsertGlobal("contact", {
     sectionHeadline: "Hubungi tim kami",
     sectionDescription:
@@ -782,20 +867,6 @@ async function seedGlobals() {
         description: "Koordinasi komersial, layanan pelanggan, dan pusat komunikasi nasional.",
         phone: "+62 (21) 5555-1020",
         isPrimary: true,
-      },
-      {
-        label: "Fasilitas produksi",
-        city: "Cikarang",
-        address: "Kawasan Industri Delta Silicon, Cikarang, Jawa Barat",
-        description: "Area produksi dan quality control untuk kebutuhan skala besar.",
-        phone: "+62 (21) 5555-1021",
-      },
-      {
-        label: "Pusat distribusi",
-        city: "Surabaya",
-        address: "Jl. Margomulyo Industri, Surabaya, Jawa Timur",
-        description: "Mempercepat pengiriman untuk Jawa Timur, Bali, dan Indonesia Timur.",
-        phone: "+62 (31) 5555-1022",
       },
     ],
   });
@@ -855,10 +926,10 @@ async function seedGlobals() {
     titleSecondary: "Kemasan Plastik untuk Bisnis yang Bertumbuh",
     description:
       "Kemitraan value-first untuk produksi, kualitas, dan distribusi kemasan yang stabil di seluruh Indonesia.",
-    primaryCtaLabel: "Lihat solusi",
-    primaryCtaHref: "/layanan",
-    secondaryCtaLabel: "Tonton profil",
-    secondaryCtaHref: "/tentang-kami",
+    primaryCtaLabel: "Pengetahuan Produk",
+    primaryCtaHref: "/pengetahuan-produk",
+    secondaryCtaLabel: "Program Mitra",
+    secondaryCtaHref: "/program-mitra",
     mediaType: "video",
     backgroundVideoUrl: "/videos/plastic.webm",
     backgroundImage: mediaFallback("homepageHeroBackground")?.id,
@@ -871,110 +942,27 @@ async function seedGlobals() {
     headerCtaHref: "/kontak",
     navigationItems: [
       { label: "Beranda", href: "/" },
-      {
-        label: "Tentang Kami",
-        href: "/tentang-kami",
-        megaMenuGroups: [
-          {
-            title: "Perusahaan",
-            icon: "Blocks",
-            links: [
-              {
-                label: "Profil Perusahaan",
-                href: "/tentang-kami#company-profile",
-                description: "Gambaran singkat tentang perusahaan dan arah kemitraan.",
-                icon: "Sparkles",
-              },
-              {
-                label: "Brand Promise",
-                href: "/tentang-kami#tentang",
-                description: "Nilai inti dan misi operasional yang dijalankan.",
-                icon: "ShieldCheck",
-              },
-            ],
-          },
-          {
-            title: "Tentang Operasi",
-            icon: "Factory",
-            links: [
-              {
-                label: "Proses Produksi",
-                href: "/tentang-kami#proses-produksi",
-                description: "Alur kerja produksi yang terukur.",
-                icon: "Truck",
-              },
-              {
-                label: "Tim",
-                href: "/tentang-kami#people",
-                description: "Orang-orang yang menjalankan eksekusi harian.",
-                icon: "Users",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        label: "Layanan",
-        href: "/layanan",
-        megaMenuGroups: [
-          {
-            title: "Fokus Industri",
-            icon: "Factory",
-            links: [
-              {
-                label: "Food & Beverage",
-                href: "/layanan#business-solutions",
-                description: "Solusi untuk kebutuhan makanan dan minuman.",
-                icon: "Factory",
-              },
-              {
-                label: "Retail & E-commerce",
-                href: "/layanan#business-solutions",
-                description: "Kemasan yang mendukung pengiriman dan branding.",
-                icon: "Blocks",
-              },
-            ],
-          },
-          {
-            title: "Solusi Lain",
-            icon: "Leaf",
-            links: [
-              {
-                label: "Industrial",
-                href: "/layanan#business-solutions",
-                description: "Untuk kebutuhan manufaktur dan distribusi besar.",
-                icon: "Factory",
-              },
-              {
-                label: "Custom Solutions",
-                href: "/layanan#business-solutions",
-                description: "Penyesuaian sesuai spesifikasi proyek.",
-                icon: "Sparkles",
-              },
-            ],
-          },
-        ],
-      },
-      { label: "Proyek", href: "/proyek" },
-      { label: "Berita", href: "/berita" },
+      { label: "Tentang Kami", href: "/tentang-kami" },
+      { label: "Pengetahuan Produk", href: "/pengetahuan-produk" },
+      { label: "Program Mitra", href: "/program-mitra" },
       { label: "Kontak", href: "/kontak" },
     ],
     footerDescription:
-      "MRS membantu mitra menjaga kualitas kemasan, kelancaran distribusi, dan konsistensi layanan dengan pendekatan yang value-first.",
+      "MRS membantu mitra menjaga kualitas kemasan, kelancaran distribusi, dan konsistensi layanan dengan pendekatan value-first dan berbasis keberkahan.",
     footerGroups: [
       {
         title: "Perusahaan",
         links: [
           { label: "Tentang Kami", href: "/tentang-kami" },
-          { label: "Proyek", href: "/proyek" },
-          { label: "Berita", href: "/berita" },
+          { label: "Program Mitra", href: "/program-mitra" },
+          { label: "Pengetahuan Produk", href: "/pengetahuan-produk" },
         ],
       },
       {
-        title: "Layanan",
+        title: "Akses Cepat",
         links: [
-          { label: "Layanan", href: "/layanan" },
-          { label: "Keahlian", href: "/layanan#business-solutions" },
+          { label: "Beranda", href: "/" },
+          { label: "Berita", href: "/berita" },
           { label: "Proses Produksi", href: "/tentang-kami#proses-produksi" },
         ],
       },

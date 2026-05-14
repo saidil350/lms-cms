@@ -13,6 +13,7 @@ import { Team } from './collections/Team.ts'
 import { Certifications } from './collections/Certifications.ts'
 import { Industries } from './collections/Industries.ts'
 import { Innovations } from './collections/Innovations.ts'
+import { Leads } from './collections/Leads.ts'
 
 import { CompanyProfile } from './globals/CompanyProfile.ts'
 import { BrandPromise } from './globals/BrandPromise.ts'
@@ -21,6 +22,8 @@ import { Locations } from './globals/Locations.ts'
 import { Stats } from './globals/Stats.ts'
 import { ProductionProcess } from './globals/ProductionProcess.ts'
 import { HomepageHero } from './globals/HomepageHero.ts'
+import { ProductKnowledge } from './globals/ProductKnowledge.ts'
+import { ProgramMitra } from './globals/ProgramMitra.ts'
 import { SiteChrome } from './globals/SiteChrome.ts'
 import { withFrontendCollectionSync, withFrontendGlobalSync } from './hooks/revalidateFrontend.ts'
 
@@ -53,11 +56,14 @@ export default buildConfig({
     Certifications,
     Industries,
     Innovations,
+    Leads,
   ]),
   globals: withFrontendGlobalSync([
     CompanyProfile,
     HomepageHero,
     BrandPromise,
+    ProductKnowledge,
+    ProgramMitra,
     Contact,
     Locations,
     Stats,
@@ -95,7 +101,7 @@ export default buildConfig({
                   `${process.env.S3_PUBLIC_URL}/${prefix || 'lms-media'}/${fname}`,
               },
             },
-            bucket: process.env.S3_BUCKET,
+            bucket: process.env.S3_BUCKET || 'lms-media',
             config: {
               endpoint: process.env.S3_ENDPOINT,
               region: process.env.S3_REGION || 'auto',

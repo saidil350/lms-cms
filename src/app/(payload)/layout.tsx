@@ -1,4 +1,5 @@
 import '@payloadcms/next/css'
+import './custom-admin.css'
 
 import { RenderServerComponent } from '@payloadcms/ui/elements/RenderServerComponent'
 import { getClientConfig } from '@payloadcms/ui/utilities/getClientConfig'
