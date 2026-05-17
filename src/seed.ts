@@ -651,7 +651,7 @@ async function seedGlobals() {
     overviewBadgeLabel: "Mitra strategis distributor nasional",
     overviewMediaLabel: "Profil perusahaan",
     overviewVideoMode: "video",
-    overviewVideoUrl: "/videos/plastic.mp4",
+    overviewVideoUrl: "/videos/plastic.webm",
     overviewVideoPoster: mediaFallback("companyProfileMedia")?.id,
     peopleEyebrow: "Tim",
     peopleHeadline: "Orang-orang di balik eksekusi yang menjaga komitmen kemitraan",
