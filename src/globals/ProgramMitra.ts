@@ -113,5 +113,34 @@ export const ProgramMitra: GlobalConfig = {
       label: 'Link CTA',
       defaultValue: '/kontak',
     },
+    // ─── FAQ ─────────────────────────────────────────────────────────────────
+    {
+      name: 'faqTitle',
+      type: 'text',
+      label: 'Judul FAQ',
+      defaultValue: 'Pertanyaan Umum',
+    },
+    {
+      name: 'faqs',
+      type: 'array',
+      label: 'FAQ Program MOP',
+      admin: {
+        description: 'Pertanyaan umum seputar Program MOP.',
+      },
+      fields: [
+        {
+          name: 'question',
+          type: 'text',
+          required: true,
+          label: 'Pertanyaan',
+        },
+        {
+          name: 'answer',
+          type: 'textarea',
+          required: true,
+          label: 'Jawaban',
+        },
+      ],
+    },
   ],
 }

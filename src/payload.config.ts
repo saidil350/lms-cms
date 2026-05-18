@@ -15,6 +15,8 @@ import { Certifications } from './collections/Certifications.ts'
 import { Industries } from './collections/Industries.ts'
 import { Innovations } from './collections/Innovations.ts'
 import { Leads } from './collections/Leads.ts'
+import { Products } from './collections/Products.ts'
+import { ProductCategories } from './collections/ProductCategories.ts'
 
 // Globals
 import { CompanyProfile } from './globals/CompanyProfile.ts'
@@ -26,7 +28,11 @@ import { ProductionProcess } from './globals/ProductionProcess.ts'
 import { HomepageHero } from './globals/HomepageHero.ts'
 import { ProductKnowledge } from './globals/ProductKnowledge.ts'
 import { ProgramMitra } from './globals/ProgramMitra.ts'
+import { KeunggulanHalgreen } from './globals/KeunggulanHalgreen.ts'
 import { SiteChrome } from './globals/SiteChrome.ts'
+import { BrandEssentials } from './globals/BrandEssentials.ts'
+import { BrandStory } from './globals/BrandStory.ts'
+import { DifferentiatingExecution } from './globals/DifferentiatingExecution.ts'
 import { withFrontendCollectionSync, withFrontendGlobalSync } from './hooks/revalidateFrontend.ts'
 
 const dirname = path.resolve(process.cwd(), 'src')
@@ -66,6 +72,8 @@ export default buildConfig({
     Industries,
     Innovations,
     Leads,
+    Products,
+    ProductCategories,
   ]),
 
   // ─── Globals ─────────────────────────────────────────────────────────────────
@@ -75,11 +83,15 @@ export default buildConfig({
     BrandPromise,
     ProductKnowledge,
     ProgramMitra,
+    KeunggulanHalgreen,
     Contact,
     Locations,
     Stats,
     ProductionProcess,
     SiteChrome,
+    BrandEssentials,
+    BrandStory,
+    DifferentiatingExecution,
   ]),
 
   // ─── Admin Panel ─────────────────────────────────────────────────────────────
