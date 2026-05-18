@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* SHADCN UI ZINC THEME OVERRIDES FOR PAYLOAD CMS */
+
+/* Enhanced spacing and shadows for better visual hierarchy */
+:root {
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
 :root {
   /* Fonts */
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -14,6 +27,7 @@
   --theme-bg: #ffffff;
   --theme-text: #09090b;
   --theme-text-dim: #71717a;
+
   
   --theme-elevation-0: #ffffff;
   --theme-elevation-50: #fafafa;
@@ -80,15 +94,25 @@ body {
 
 /* SHADCN UI COMPONENT STYLING OVERRIDES */
 
-/* 1. Buttons */
+/* 1. Buttons - Fixed Text Readability */
 button, .btn {
   border-radius: var(--style-radius-m) !important;
   font-weight: 500 !important;
   transition: all 0.2s ease !important;
   text-transform: none !important;
   letter-spacing: normal !important;
+  /* Ensure text is readable */
+  color: var(--theme-text) !important;
+  /* Proper sizing for labels */
+  min-width: fit-content !important;
+  padding: 0.5rem 1rem !important;
+  /* Prevent text overflow */
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
 }
 
+/* Primary button - Ensure text contrast */
 .btn--style-primary {
   background-color: var(--theme-text) !important;
   color: var(--theme-bg) !important;
@@ -101,6 +125,13 @@ button, .btn {
   color: var(--theme-bg) !important;
 }
 
+.btn--style-primary span,
+.btn--style-primary div,
+.btn--style-primary button {
+  color: var(--theme-bg) !important;
+}
+
+/* Secondary button - Ensure text visibility */
 .btn--style-secondary {
   background-color: transparent !important;
   color: var(--theme-text) !important;
@@ -110,52 +141,240 @@ button, .btn {
 
 .btn--style-secondary:hover {
   background-color: var(--theme-elevation-50) !important;
+  color: var(--theme-text) !important;
 }
 
 [data-theme='dark'] .btn--style-secondary:hover {
   background-color: var(--theme-elevation-100) !important;
 }
 
+/* Fix button text elements */
+.btn span,
+.btn div,
+.btn label,
+.btn a,
+button span,
+button div,
+button label,
+button a {
+  color: inherit !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+/* Header/top buttons specifically */
+header button,
+.navbar button,
+.top-nav button {
+  min-width: 3rem !important;
+  padding: 0.5rem 0.75rem !important;
+  color: var(--theme-text) !important;
+}
+
+header button span,
+.navbar button span,
+.top-nav button span {
+  color: var(--theme-text) !important;
+  display: inline-block !important;
+}
+
 /* 2. Form Inputs (Text, Email, Password, Textarea, Select) */
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-input[type="number"], 
-input[type="search"], 
-textarea, 
-.payload-react-select__control {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea {
   border-radius: var(--style-radius-m) !important;
-  border: 1px solid var(--theme-elevation-150) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
   background-color: var(--theme-bg) !important;
   box-shadow: none !important;
   transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  padding: 0.5rem 0.75rem !important;
 }
 
-input:focus, 
-textarea:focus, 
+/* Reset React Select input to override global input[type="text"] styling and prevent visual boxes */
+.select input,
+.select-input input,
+[class*="-control"] input,
+[class*="select"] input,
+.payload-react-select__control input,
+.payload-react-select__control input[type="text"],
+.payload-react-select__input-container input,
+input.payload-react-select__input,
+div[class*="ValueContainer"] input {
+  border: none !important;
+  border-width: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  min-height: auto !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* React Select - Fix text cutoff on left side */
+.payload-react-select__control {
+  border-radius: var(--style-radius-m) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
+  background-color: var(--theme-bg) !important;
+  box-shadow: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  /* Ensure proper padding to prevent text cutoff */
+  padding: 0.25rem 0.5rem !important;
+  min-height: 2.5rem !important;
+}
+
+/* React Select Value Container - Fix text spacing */
+.payload-react-select__value-container {
+  padding: 0.25rem 0.5rem !important;
+  padding-left: 0.75rem !important;
+}
+
+/* React Select Single Value - Ensure text is visible */
+.payload-react-select__single-value {
+  color: var(--theme-text) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0.25rem !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+}
+
+/* React Select Placeholder */
+.payload-react-select__placeholder {
+  color: var(--theme-text-dim) !important;
+  margin-left: 0 !important;
+  padding-left: 0.25rem !important;
+}
+
+/* React Select Indicators Container */
+.payload-react-select__indicators {
+  padding: 0.25rem 0.5rem !important;
+}
+
+input:focus,
+textarea:focus,
 .payload-react-select__control--is-focused,
 .payload-react-select__control--menu-is-open {
   border-color: var(--theme-text) !important;
   outline: none !important;
-  box-shadow: 0 0 0 1px var(--theme-text) !important;
+  box-shadow: 0 0 0 2px var(--theme-elevation-100), 0 0 0 4px var(--theme-text) !important;
+}
+
+/* React Select Menu - Fix dropdown options */
+.payload-react-select__menu {
+  border-radius: var(--style-radius-m) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
+  background-color: var(--theme-bg) !important;
+  box-shadow: var(--shadow-md) !important;
+  margin-top: 0.25rem !important;
+  z-index: 1000 !important;
+}
+
+/* React Select Menu List */
+.payload-react-select__menu-list {
+  padding: 0.25rem 0 !important;
+  border-radius: var(--style-radius-m) !important;
+}
+
+/* React Select Option - Fix option text */
+.payload-react-select__option {
+  padding: 0.625rem 0.75rem !important;
+  color: var(--theme-text) !important;
+  background-color: transparent !important;
+  transition: background-color 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.payload-react-select__option:hover {
+  background-color: var(--theme-elevation-100) !important;
+  color: var(--theme-text) !important;
+}
+
+.payload-react-select__option--is-focused {
+  background-color: var(--theme-elevation-100) !important;
+  color: var(--theme-text) !important;
+}
+
+.payload-react-select__option--is-selected {
+  background-color: var(--theme-elevation-200) !important;
+  color: var(--theme-text) !important;
+  font-weight: 500 !important;
+}
+
+/* React Select Multi Value */
+.payload-react-select__multi-value {
+  background-color: var(--theme-elevation-100) !important;
+  border-radius: var(--style-radius-s) !important;
+  margin: 0.125rem 0.25rem !important;
+  padding: 0.125rem 0.375rem !important;
+  color: var(--theme-text) !important;
+}
+
+.payload-react-select__multi-value__label {
+  color: var(--theme-text) !important;
+  padding: 0 0.25rem !important;
+  font-size: 0.875rem !important;
+}
+
+.payload-react-select__multi-value__remove {
+  color: var(--theme-text-dim) !important;
+  padding: 0 0.25rem !important;
+  cursor: pointer !important;
+}
+
+.payload-react-select__multi-value__remove:hover {
+  color: var(--theme-text) !important;
+  background-color: var(--theme-elevation-200) !important;
+}
+
+/* React Select Indicator */
+.payload-react-select__indicator {
+  padding: 0.5rem !important;
+  color: var(--theme-text-dim) !important;
+}
+
+.payload-react-select__indicator:hover {
+  color: var(--theme-text) !important;
+}
+
+/* React Select Clear Indicator */
+.payload-react-select__clear-indicator {
+  padding: 0.5rem !important;
+  color: var(--theme-text-dim) !important;
+  cursor: pointer !important;
+}
+
+.payload-react-select__clear-indicator:hover {
+  color: var(--theme-text) !important;
 }
 
 /* 3. Cards & Panels */
 .card, .panel, .payload-toast-container > div {
   border-radius: var(--style-radius-l) !important;
-  border: 1px solid var(--theme-elevation-150) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
   background-color: var(--theme-bg) !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.card:hover, .panel:hover {
+  box-shadow: var(--shadow-md) !important;
 }
 
 /* 4. Sidebar / Nav */
 .nav {
-  border-right: 1px solid var(--theme-elevation-100) !important;
+  border-right: 1px solid var(--theme-elevation-200) !important;
   background-color: var(--theme-elevation-0) !important;
 }
 
 .nav__wrap {
-  padding: 1rem 0.5rem !important;
+  padding: 1rem 0.75rem !important;
 }
 
 .nav-group__label, .nav__label {
@@ -165,12 +384,13 @@ textarea:focus,
   letter-spacing: 0.05em !important;
   color: var(--theme-text-dim) !important;
   padding: 0.5rem 0.75rem !important;
-  margin-top: 0.5rem !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .nav__link, .nav-group__toggle {
   border-radius: var(--style-radius-m) !important;
-  padding: 0.5rem 0.75rem !important;
+  padding: 0.625rem 0.75rem !important;
   color: var(--theme-text) !important;
   font-weight: 500 !important;
   font-size: 0.875rem !important;
@@ -178,18 +398,21 @@ textarea:focus,
   margin-bottom: 0.25rem !important;
   display: flex !important;
   align-items: center !important;
+  gap: 0.5rem !important;
 }
 
 .nav__link:hover, .nav-group__toggle:hover {
   background-color: var(--theme-elevation-100) !important;
   color: var(--theme-text) !important;
   text-decoration: none !important;
+  transform: translateX(2px) !important;
 }
 
 .nav__link--active {
   background-color: var(--theme-elevation-150) !important;
   color: var(--theme-text) !important;
   font-weight: 600 !important;
+  box-shadow: var(--shadow-sm) !important;
 }
 
 /* 5. Headers & Typography */
@@ -197,56 +420,138 @@ h1, h2, h3, h4, h5, h6, .card__title {
   font-weight: 600 !important;
   letter-spacing: -0.025em !important;
   color: var(--theme-text) !important;
+  line-height: 1.2 !important;
 }
+
+h1 { font-size: 1.875rem !important; margin-bottom: 1rem !important; }
+h2 { font-size: 1.5rem !important; margin-bottom: 0.875rem !important; }
+h3 { font-size: 1.25rem !important; margin-bottom: 0.75rem !important; }
+h4 { font-size: 1.125rem !important; margin-bottom: 0.625rem !important; }
 
 p, span, div, a {
   color: var(--theme-text) !important;
 }
 
 /* Fix text-dim elements */
-.field-description, .field-label, .nav__link--active {
+.field-description, .field-label {
   color: var(--theme-text-dim) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.label {
+  font-weight: 500 !important;
+  color: var(--theme-text) !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
 }
 
 /* 6. Checkboxes / Radios */
 input[type="checkbox"], input[type="radio"] {
   border-radius: var(--style-radius-s) !important;
-  border: 1px solid var(--theme-elevation-150) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
   accent-color: var(--theme-text) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+input[type="checkbox"]:hover, input[type="radio"]:hover {
+  border-color: var(--theme-text) !important;
+  transform: scale(1.05) !important;
 }
 
 /* 7. Tables */
 .table {
-  border: 1px solid var(--theme-elevation-150) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
   border-radius: var(--style-radius-m) !important;
   overflow: hidden !important;
+  box-shadow: var(--shadow-sm) !important;
 }
 
 .table th {
   background-color: var(--theme-elevation-50) !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: var(--theme-text-dim) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+  font-size: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
 }
 
 .table td {
   border-bottom: 1px solid var(--theme-elevation-100) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.table tbody tr:hover {
+  background-color: var(--theme-elevation-50) !important;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none !important;
 }
 
 /* 8. Fix Array Fields & Collapsible Toggles Layout */
 .array-field__item {
   margin-bottom: 1.5rem !important;
+  padding: 1rem !important;
+  background-color: var(--theme-elevation-50) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: var(--style-radius-m) !important;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.array-field__item:hover {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Array field header with centered text */
+.array-field__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  text-align: center !important;
+}
+
+.array-field__title {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .field-description {
   margin-top: 0.5rem !important;
   margin-bottom: 1rem !important;
   display: block !important;
+  line-height: 1.5 !important;
+  color: var(--theme-text-dim) !important;
 }
 
 .collapsible__toggle {
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   gap: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  background-color: var(--theme-elevation-50) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: var(--style-radius-m) !important;
+  transition: background-color 0.2s ease !important;
+  text-align: center !important;
+}
+
+.collapsible__toggle:hover {
+  background-color: var(--theme-elevation-100) !important;
+}
+
+.collapsible__toggle span,
+.collapsible__toggle div {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 /* Prevent screen-reader text from overlapping */

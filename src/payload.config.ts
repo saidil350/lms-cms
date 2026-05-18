@@ -33,6 +33,13 @@ import { SiteChrome } from './globals/SiteChrome.ts'
 import { BrandEssentials } from './globals/BrandEssentials.ts'
 import { BrandStory } from './globals/BrandStory.ts'
 import { DifferentiatingExecution } from './globals/DifferentiatingExecution.ts'
+import { BrandMission } from './globals/BrandMission.ts'
+import { BenefitAnalysis } from './globals/BenefitAnalysis.ts'
+import { BrandPyramid } from './globals/BrandPyramid.ts'
+import { TargetMarket } from './globals/TargetMarket.ts'
+import { Positioning } from './globals/Positioning.ts'
+import { UniqueValueProposition } from './globals/UniqueValueProposition.ts'
+import { CTA } from './globals/CTA.ts'
 import { withFrontendCollectionSync, withFrontendGlobalSync } from './hooks/revalidateFrontend.ts'
 
 const dirname = path.resolve(process.cwd(), 'src')
@@ -92,6 +99,13 @@ export default buildConfig({
     BrandEssentials,
     BrandStory,
     DifferentiatingExecution,
+    BrandMission,
+    BenefitAnalysis,
+    BrandPyramid,
+    TargetMarket,
+    Positioning,
+    UniqueValueProposition,
+    CTA,
   ]),
 
   // ─── Admin Panel ─────────────────────────────────────────────────────────────
